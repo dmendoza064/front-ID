@@ -187,9 +187,29 @@
               <v-list-item-title >Actualizar sucursales</v-list-item-title>    
           </v-list-item>-->
         </v-list-group>
-        <v-list-item to="/secret/clientespagos">      
-              <v-list-item-title >Pagos clientes</v-list-item-title>    
-            </v-list-item>
+        <v-list-group prepend-icon="trending_up" no-action>
+          <template v-slot:activator>
+            <v-list-item-title>
+              <v-list-item-title>Pagos Clientes</v-list-item-title>
+            </v-list-item-title>
+          </template>
+          <v-list-item to="/secret/clientespagos">
+            <v-list-item-title>Lista de Pagos</v-list-item-title>
+          </v-list-item>
+          
+        </v-list-group>
+        <v-list-group prepend-icon="assignment" no-action>
+          <template v-slot:activator>
+            <v-list-item-title>
+              <v-list-item-title>Productos</v-list-item-title>
+            </v-list-item-title>
+          </template>
+          <v-list-item to="/secret/productos">
+            <v-list-item-title>Lista de Productos</v-list-item-title>
+          </v-list-item>
+          
+        </v-list-group>
+        
       </v-list>
     </v-navigation-drawer>
   </div>
