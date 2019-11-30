@@ -14,6 +14,7 @@ import registros from './modules/registros'
 import sucursales from './modules/sucursales'
 import productos from './modules/productos'
 import pagos from './modules/pagos'
+import servicios from './modules/servicios'
 import VuexPersistence from 'vuex-persist'
 Vue.use(Vuex)
 
@@ -45,7 +46,8 @@ export default new Vuex.Store({
     registros,
     sucursales,
     productos,
-    pagos
+    pagos,
+    servicios
   },
   plugins: [vuexLocal.plugin]
 })

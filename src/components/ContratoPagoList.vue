@@ -1,6 +1,6 @@
 <template>
   <v-card>
-    mes {{dato}}
+    
     <!-- {{contratos}} -->
     <v-text-field v-model="contratos.fecha_inicial"></v-text-field>
 
@@ -8,7 +8,7 @@
     <!-- <v-btn @click="fecha"></v-btn> -->
     <!-- {{dato}} -->
     <v-card-title primary>
-      <v-icon left color="black" large>supervised_user_circle</v-icon>Pagos
+      <v-icon left color="black" large>supervised_user_circle</v-icon>Pagos que se deben
       <div class="flex-grow-1"></div>
       <v-text-field v-model="search" append-icon="search" label="Buscar" single-line hide-details></v-text-field>
     </v-card-title>
@@ -56,7 +56,7 @@
                     ></v-text-field>
                   </v-col>
                   <v-col cols="12" sm="6" md="4">
-                    <H3>Total: {{ (editedItem.precio *1) +(editedItem.recargos * 1)  }}</H3>
+                    <H3>Total: {{ (editedItem.precio *1) + (editedItem.recargos * 1)  }}</H3>
                   </v-col>
                   
                 </v-row>
@@ -184,11 +184,11 @@ export default {
     ...mapActions({
       createPago: "pagos/addProducto"
     }),
-
+    ...mapActions('contratos', ['fetchContratosP']),
     addPago(editedItem) {
       // if (this.$refs.formAdd.validate()) {
-        this.editedItem.total = ((this.editedItem.precio * 1) + (this.editedItem.recargos * 1))
-        console.log('total: ', this.editedItem.tota)
+        this.editedItem.total = ((this.editedItem.precio * 1) + (this.editedItem.recargos * 1));
+        console.log('total: ', this.editedItem.total)
         this.createPago(this.editedItem).then(respuesta => {
           
           if (!this.status) {
@@ -198,7 +198,7 @@ export default {
               showConfirmButton: true
               //timer: 1500
             });
-            this.fetchUsuarios();
+            this.fetchContratosP();
           } else {
             Swal.fire({
               type: "error",

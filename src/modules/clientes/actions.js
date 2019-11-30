@@ -22,23 +22,24 @@ export async function addCliente({commit}, cliente){
          await Vue.axios({
             method: 'POST',
             url: '/consumers/v0',
-            data:{
+            data:cliente
+            // {
                 
-                nombre: cliente.nombre,
-                apellido_p: cliente.apellido_p,
-                apellido_m: cliente.apellido_m,
-                telefono: cliente.telefono,
-                celular: cliente.celular,
-                email: cliente.email,
-                cp: cliente.cp,
-                direccion: cliente.direccion,
-                entre_calles: cliente.entre_calles,
-                localidades_id: cliente.localidades_id,
-                id_empleado: 2,
-                status: 1,
-                notas: cliente.notas
-               // estatus: cliente.estatus
-            }
+            //     nombre: cliente.nombre,
+            //     apellido_p: cliente.apellido_p,
+            //     apellido_m: cliente.apellido_m,
+            //     telefono: cliente.telefono,
+            //     celular: cliente.celular,
+            //     email: cliente.email,
+            //     cp: cliente.cp,
+            //     direccion: cliente.direccion,
+            //     entre_calles: cliente.entre_calles,
+            //     localidades_id: cliente.localidades_id,
+            //     id_empleado: 2,
+            //     status: 1,
+            //     notas: cliente.notas
+            //    // estatus: cliente.estatus
+            // }
         })
         
     }catch(e){
@@ -51,23 +52,25 @@ export async function addCliente({commit}, cliente){
 }
 
 export async function updateCliente({commit}, cliente){
+    console.log('update: ', cliente)
     try{
          await Vue.axios({
             method: 'PUT',
-            url: `/soporte/v0/${cliente.id}`,
-            data:{
-                id: cliente.id,
-                nombre: cliente.nombre,
-                apellido_p: cliente.apellido_p,
-                apellido_m: cliente.apellido_m,
-                telefono: cliente.telefono,
-                celular: cliente.celular,
-                email: cliente.email,
-                cp: cliente.cp,
-                direccion: cliente.direccion,
-                localidades_id: cliente.localidades_id,
-                estatus: cliente.estatus
-            }
+            url: `/consumers/v0`,
+            data: cliente
+            // {
+            //     id: cliente.id,
+            //     nombre: cliente.nombre,
+            //     apellido_p: cliente.apellido_p,
+            //     apellido_m: cliente.apellido_m,
+            //     telefono: cliente.telefono,
+            //     celular: cliente.celular,
+            //     email: cliente.email,
+            //     cp: cliente.cp,
+            //     direccion: cliente.direccion,
+            //     folio: cliente.folio,
+            //     estatus: cliente.estatus
+            // }
         })
         
     }catch(e){
