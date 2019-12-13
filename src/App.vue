@@ -1,14 +1,14 @@
 <template>
-  <div id="app">
+  
     <v-app>
       <loading :active.sync="loading"></loading>
-      <v-container>
+      
         <navigation-guest v-if="!isLogged"></navigation-guest>
         <navigation-logged v-else></navigation-logged>
         <router-view />
-      </v-container>
+      
     </v-app>
-  </div>
+  
 </template>
 
 <script>

@@ -41,6 +41,7 @@ export async function addContrato({commit}, contrato){
 }
 
 export async function updateContrato({commit}, contrato){
+    console.log('update contrato: ', contrato)
     try{
         await Vue.axios({
             method: 'PUT',
@@ -54,7 +55,7 @@ export async function updateContrato({commit}, contrato){
                 servicios_id: contrato.servicios_id,
                 clientes_id: contrato.clientes_id,
                 nota: contrato.nota,
-                id_empleado: contrato.id_empleado
+                id_empleado: 3
             }
             
         })
