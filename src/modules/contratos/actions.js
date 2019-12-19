@@ -5,7 +5,7 @@ export async function fetchContratos({commit}){
         const {data} = await Vue.axios({
             url: '/contrato/v0'
         })
-         commit('setContratos', data)
+         commit('setContratos', data.object)
     }catch(e){
         commit('ContratosError', e.message)
         console.log('ContratosError',e.message)
