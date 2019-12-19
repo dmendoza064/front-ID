@@ -28,7 +28,7 @@ export async function addContrato({commit}, contrato){
                 servicios_id: contrato.servicios_id,
                 clientes_id: contrato.clientes_id,
                 nota: contrato.nota,
-                id_empleado: contrato.id_empleado
+                id_empleado: 3
             }
             
         })
